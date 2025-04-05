@@ -201,8 +201,8 @@ class BayesianModelSelector:
         lppd = np.sum(lppd_i)
 
         # we now want to calculate the p_waic
-        var_log_lik = np.var(log_likelihood, axis=1, ddof=1)  # sample var across draws
-        p_waic = np.sum(var_log_lik)
+        var_log_likelihood = np.var(log_likelihood, axis=1, ddof=1)  # sample var across draws
+        p_waic = np.sum(var_log_likelihood)
 
         elppd_waic = lppd - p_waic
         waic_value = -2.0 * elppd_waic
